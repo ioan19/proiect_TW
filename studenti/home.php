@@ -16,8 +16,8 @@
         </div>
         <nav class="main-menu">
             <ul>
-                <li><a href="home.php">Acasă</a></li>
-                <li><a href="about.php" class="active">Despre Noi</a></li>
+                <li><a href="home.php" class="active">Acasă</a></li>
+                <li><a href="about.php">Despre Noi</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="dashboard.php" class="cta-button">Dashboard
