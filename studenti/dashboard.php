@@ -88,10 +88,7 @@ $recentData = $stmtRecent->fetchAll();
             </ul>
         </nav>
         <div class="user-controls-top">
-             <div class="user-info-top">
-                <i class="fas fa-user-circle"></i>
-                <span class="user-role"><?= htmlspecialchars($fullName); ?> (<?= ucfirst($role) ?>)</span>
-            </div>
+             <div class="user-info-top"><i class="fas fa-user-circle"></i> <?= htmlspecialchars($_SESSION['fullname']) ?></div>
              <a href="logout.php" class="logout-top-button">Deconectare</a>
         </div>
     </div>
