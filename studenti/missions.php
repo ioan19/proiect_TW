@@ -7,7 +7,7 @@ $userId = $_SESSION['user_id'];
 $message = '';
 
 // 1. PRELUĂM DRONELE PENTRU JAVASCRIPT
-// Le luăm pe toate cele active pentru a le filtra în browser
+// Acum avem coloana 'Type' corectă în baza de date
 $drones = $pdo->query("SELECT DroneID, Model, Type, PayloadCapacity, AutonomyMin FROM Drones WHERE Status = 'activa'")->fetchAll(PDO::FETCH_ASSOC);
 $jsonDrones = json_encode($drones);
 
@@ -70,7 +70,6 @@ if ($isAdmin) {
         .planning-container { display: flex; gap: 20px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px; }
         .form-section { flex: 1; }
         .map-section { flex: 2; }
-        /* Harta trebuie să aibă o înălțime definită! */
         #map { height: 500px; width: 100%; border-radius: 4px; border: 1px solid #ccc; z-index: 1; }
         
         .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
@@ -227,7 +226,7 @@ if ($isAdmin) {
     </div>
 
     <script>
-        // Datele din PHP
+        // Datele despre drone din PHP
         const availableDrones = <?= $jsonDrones ?>;
     </script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
